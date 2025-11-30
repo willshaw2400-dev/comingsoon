@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Test Server — Coming Soon</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0f0f17, #1a1a2e);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 120px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        .timer-box {
+            margin-top: 40px;
+            font-size: 36px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 25px;
+            border-radius: 16px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(6px);
+        }
+
+        .links {
+            margin-top: 45px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 10px 15px;
+            text-decoration: none;
+            padding: 12px 25px;
+            background: #ff4757;
+            color: white;
+            border-radius: 10px;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+
+        .links a:hover {
+            background: #ff5c6a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 80px;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Roblox Game Test Server</h1>
+    <p class="tagline">Playtests • Experimental Features • Early Access</p>
+
+    <div class="timer-box">
+        <div id="countdown">Loading timer...</div>
+    </div>
+
+    <div class="links">
+        <a href="https://discord.gg/qMFW3tmSYH" target="_blank">Join Discord</a>
+        <a href="https://www.roblox.com/groups/your-group-id" target="_blank">Roblox Group</a>
+    </div>
+
+    <footer>
+        © 2026 Roblox Test Server — Coming Soon
+    </footer>
+</div>
+
+<script>
+    // SET TARGET DATE — 5 months from now (30 APRIL 2026)
+    const targetDate = new Date("April 30, 2026 00:00:00").getTime();
+
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            countdownElement.innerHTML = "The Test Server Is Now OPEN!";
+            return;
+        }
+
+        const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+        const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML =
+            months + "M " + days + "D " + hours + "H " + minutes + "M " + seconds + "S";
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
